@@ -3,7 +3,7 @@ let min=document.getElementById('min');
 let sec=document.getElementById('sec');
 
 
-function displayTime(){
+function displayTime1(){
     let date = new Date();
 
     //getting hour,mins,secs from date
@@ -22,13 +22,9 @@ function displayTime(){
 
 }
 
-setInterval(displayTime,1000);
+setInterval(displayTime1,1000);
 
-if(hrs >=12){
-    session.innerHTML = 'PM';
-}else{
-    session.innerHTML = 'AM';
-}
+
 
 function displayTime(){
     var dateTime = new Date();
@@ -36,12 +32,19 @@ function displayTime(){
     var min = dateTime.getMinutes();
     var sec = dateTime.getSeconds();
     var session = document.getElementById('session');
-    var day= dateTime.getDay();
+
+    if(hrs >=12){
+        session.innerHTML = 'PM';
+    }else{
+        session.innerHTML = 'AM';
+    }
+   
 
     document.getElementById('hours').innerHTML=hrs;
     document.getElementById('minutes').innerHTML=min;
     document.getElementById('seconds').innerHTML=sec;
-    document.getElementById('day').innerHTML=`Day:${day}`;
+  
 }
 setInterval(displayTime,10);
+
 
